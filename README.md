@@ -1,6 +1,6 @@
-# @uniswap/token-lists (beta)
+# @SYNC-Network/collection-lists (beta)
 
-[![Tests](https://github.com/Uniswap/token-lists/workflows/Tests/badge.svg)](https://github.com/Uniswap/token-lists/actions?query=workflow%3ATests)
+[![Tests](https://github.com/SYNC-Network/collection-lists/workflows/Tests/badge.svg)](https://github.com/SYNC-Network/collection-lists/actions?query=workflow%3ATests)
 [![npm](https://img.shields.io/npm/v/@uniswap/token-lists)](https://unpkg.com/@uniswap/token-lists@latest/)
 
 This package includes a JSON schema for token lists, and TypeScript utilities for working with token lists.
