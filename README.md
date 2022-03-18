@@ -1,5 +1,8 @@
 # @SYNC-Network/collection-lists (beta)
 
+This is a fork of the Uniswap Token list standard designed to work with ERC721 and ERC1155 token standards and not to conflict with Uniswap's ERC20 token lists.
+They are not compatible with each other by design to improve user experience and meet the specific needs of the NFT community.
+
 [![Tests](https://github.com/SYNC-Network/collection-lists/workflows/Tests/badge.svg)](https://github.com/SYNC-Network/collection-lists/actions?query=workflow%3ATests)
 [![npm](https://img.shields.io/npm/v/@uniswap/token-lists)](https://unpkg.com/@uniswap/token-lists@latest/)
 
@@ -13,16 +16,16 @@ Neon Rain collection lists are specifications for lists of NFT collection metada
 
 Anyone can create and maintain a Collection list, as long as they follow the specification.
 
-Specifically, an instance of a token list is a [JSON](https://www.json.org/json-en.html) blob that contains a list of 
-[ERC20](https://github.com/ethereum/eips/issues/20) token metadata for use in dApp user interfaces.
-Token list JSON must validate against the [JSON schema](https://json-schema.org/) in order to be used in the Uniswap Interface.
-Tokens on token lists, and token lists themselves, are tagged so that users can easily find tokens.
+Specifically, an instance of a collection list is a [JSON](https://www.json.org/json-en.html) blob that contains a list of 
+[ERC721](https://github.com/ethereum/eips/issues/721) and [ERC1155](https://github.com/ethereum/eips/issues/1155) token metadata for use in dApp user interfaces.
+Token list JSON must validate against the [JSON schema](https://json-schema.org/) in order to be used in the Neon Rain Interface.
+Collections on collection lists, and collection lists themselves, are tagged so that users can easily find NFT collections.
 
 ## JSON Schema $id
 
 The JSON schema ID is [https://uniswap.org/tokenlist.schema.json](https://uniswap.org/tokenlist.schema.json)
 
-## Validating token lists
+## Validating collection lists
 
 This package does not include code for collection list validation. You can easily do this by including a library such as 
 [ajv](https://ajv.js.org/) to perform the validation against the JSON schema. The schema is exported from the package
