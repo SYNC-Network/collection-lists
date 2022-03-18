@@ -1,43 +1,40 @@
 {
-  "name": "My Token List",
-  "logoURI": "ipfs://QmUSNbwUxUYNMvMksKypkgWs8unSm8dX2GjCPBVGZ7GGMr",
+  "name": "NeonRain Drops",
+  "logoURI": "https://collectionlists.org/static/media/color.e7c60d18.png",
   "keywords": [
     "audited",
     "verified",
     "special tokens"
   ],
   "tags": {
-    "stablecoin": {
-      "name": "Stablecoin",
-      "description": "Tokens that are fixed to an external asset, e.g. the US dollar"
+    "membership": {
+      "name": "Membership",
+      "description": "Collections that have membership services"
     },
-    "compound": {
-      "name": "Compound Finance",
-      "description": "Tokens that earn interest on compound.finance"
+    "pfp": {
+      "name": "PFP",
+      "description": "Profile Picture Projects"
     }
   },
   "timestamp": "2020-06-12T00:00:00+00:00",
   "collections": [
     {
       "chainId": 1,
-      "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-      "symbol": "USDC",
-      "name": "USD Coin",
+      "address": "0x505a12c23fdc8f80ca4a1a3000cd39636c927128",
+      "name": "Genesis Syncronauts",
       "decimals": 6,
-      "logoURI": "ipfs://QmXfzKRvjZz3u5JRgC4v5mGVbm9ahrUiB4DgzHBsnWbTMM",
+      "logoURI": "https://collectionlists.org/static/media/color.e7c60d18.png",
       "tags": [
-        "stablecoin"
+        "pfp"
       ]
     },
     {
       "chainId": 1,
       "address": "0x39AA39c021dfbaE8faC545936693aC917d5E7563",
-      "symbol": "cUSDC",
-      "name": "Compound USD Coin",
-      "decimals": 8,
-      "logoURI": "ipfs://QmUSNbwUxUYNMvMksKypkgWs8unSm8dX2GjCPBVGZ7GGMr",
+      "name": "CryptoBonds",
+      "logoURI": "https://collectionlists.org/static/media/color.e7c60d18.png",
       "tags": [
-        "compound"
+        "FNFT"
       ]
     }
   ],
