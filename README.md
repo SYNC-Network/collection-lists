@@ -3,17 +3,17 @@
 [![Tests](https://github.com/SYNC-Network/collection-lists/workflows/Tests/badge.svg)](https://github.com/SYNC-Network/collection-lists/actions?query=workflow%3ATests)
 [![npm](https://img.shields.io/npm/v/@uniswap/token-lists)](https://unpkg.com/@uniswap/token-lists@latest/)
 
-This package includes a JSON schema for token lists, and TypeScript utilities for working with token lists.
+This package includes a JSON schema for collection lists, and TypeScript utilities for working with collection lists.
 
-The JSON schema represents the technical specification for a token list which can be used in a dApp interface, such as the Uniswap Interface.
+The JSON schema represents the technical specification for a collection list which can be used in a dApp interface, such as the Neon Rain Interface.
 
-## What are token lists?
+## What are Collection lists?
 
-Uniswap Token Lists is a specification for lists of token metadata (e.g. address, decimals, ...) that can be used by any dApp interfaces that needs one or more lists of tokens.
+Neon Rain collection lists are specifications for lists of NFT collection metadata (e.g. address, icon, etc...) that can be used by any dApp interfaces that need one or more NFT collections lists.
 
-Anyone can create and maintain a token list, as long as they follow the specification.
+Anyone can create and maintain a Collection list, as long as they follow the specification.
 
-Specifically an instance of a token list is a [JSON](https://www.json.org/json-en.html) blob that contains a list of 
+Specifically, an instance of a token list is a [JSON](https://www.json.org/json-en.html) blob that contains a list of 
 [ERC20](https://github.com/ethereum/eips/issues/20) token metadata for use in dApp user interfaces.
 Token list JSON must validate against the [JSON schema](https://json-schema.org/) in order to be used in the Uniswap Interface.
 Tokens on token lists, and token lists themselves, are tagged so that users can easily find tokens.
@@ -24,7 +24,7 @@ The JSON schema ID is [https://uniswap.org/tokenlist.schema.json](https://uniswa
 
 ## Validating token lists
 
-This package does not include code for token list validation. You can easily do this by including a library such as 
+This package does not include code for collection list validation. You can easily do this by including a library such as 
 [ajv](https://ajv.js.org/) to perform the validation against the JSON schema. The schema is exported from the package
 for ease of use.
 
@@ -61,17 +61,17 @@ validate()
 
 ```
 
-## Authoring token lists
+## Authoring collection lists
 
 ### Manual
 
-The best way to manually author token lists is to use an editor that supports JSON schema validation. Most popular
+The best way to manually author collection lists is to use an editor that supports JSON schema validation. Most popular
 code editors do, such as [IntelliJ](https://www.jetbrains.com/help/idea/json.html#ws_json_schema_add_custom) or 
 [VSCode](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings). Other editors
 can be found [here](https://json-schema.org/implementations.html#editors).
 
 The schema is registered in the [SchemaStore](https://github.com/SchemaStore/schemastore), and any file that matches
-the pattern `*.tokenlist.json` should 
+the pattern `*.collectionlist.json` should 
 [automatically utilize](https://www.jetbrains.com/help/idea/json.html#ws_json_using_schemas) 
 the JSON schema for the [supported text editors](https://www.schemastore.org/json/#editors).
 
@@ -84,7 +84,7 @@ npm package to take advantage of the JSON schema for validation and the TypeScri
 Otherwise, you are simply working with JSON. All the usual tools apply, e.g.:
 
 ```typescript
-import { TokenList, schema } from '@uniswap/token-lists'
+import { TokenList, schema } from '@SYNC-Network/collection-lists'
 
 // generate your token list however you like.
 const myList: TokenList = generateMyTokenList();
@@ -102,11 +102,11 @@ Lists include a `version` field, which follows [semantic versioning](https://sem
 
 List versions must follow the rules:
 
-- Increment major version when tokens are removed
-- Increment minor version when tokens are added
-- Increment patch version when tokens already on the list have minor details changed (name, symbol, logo URL, decimals)
+- Increment major version when collections are removed
+- Increment minor version when collections are added
+- Increment patch version when collections already on the list have minor details changed (name, symbol, logo URL, etc)
 
-Changing a token address or chain ID is considered both a remove and an add, and should be a major version update.
+Changing a collection address or chain ID is considered both a remove and an add, and should be a major version update.
 
 Note that list versioning is used to improve the user experience, but not for security, i.e. list versions are not meant
 to provide protection against malicious updates to a token list; i.e. the list semver is used as a lossy compression
