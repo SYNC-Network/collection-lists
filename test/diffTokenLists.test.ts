@@ -4,16 +4,16 @@ const tokenA: TokenInfo = {
   chainId: 1,
   address: '0x0a',
   logoURI: 'ipfs://test',
-  symbol: 'abcd',
+  // symbol: 'abcd',
   name: 'token a',
-  decimals: 18,
+  // decimals: 18,
   tags: ['hello', 'world'],
 };
-const tokenAChangedNameDecimals: TokenInfo = {
-  ...tokenA,
-  name: 'blah',
-  decimals: 12,
-};
+// const tokenAChangedNameDecimals: TokenInfo = {
+//   ...tokenA,
+//   name: 'blah',
+//   decimals: 12,
+// };
 const tokenAChangedTags: TokenInfo = {
   ...tokenA,
   tags: ['hello', 'worlds'],
@@ -22,9 +22,9 @@ const tokenB: TokenInfo = {
   chainId: 1,
   address: '0x0b',
   logoURI: 'ipfs://blah',
-  symbol: 'defg',
+  // symbol: 'defg',
   name: 'token b',
-  decimals: 9,
+  // decimals: 9,
   tags: ['token', 'other'],
 };
 

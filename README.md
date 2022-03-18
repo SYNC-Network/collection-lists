@@ -1,7 +1,10 @@
 # @SYNC-Network/collection-lists (beta)
 
 This is a fork of the Uniswap Token list standard designed to work with ERC721 and ERC1155 token standards and not to conflict with Uniswap's ERC20 token lists.
+
 They are not compatible with each other by design to improve user experience and meet the specific needs of the NFT community.
+
+If you are familiar with Uniswap Token Lists, the key differences are the contracts are under "collections" instead of "tokens" and fields for symbol and decimals have been removed to make the lists lighter, faster, and prevent confusion loading lists for dapps designed for ERC20's and vice verca.
 
 [![Tests](https://github.com/SYNC-Network/collection-lists/workflows/Tests/badge.svg)](https://github.com/SYNC-Network/collection-lists/actions?query=workflow%3ATests)
 [![npm](https://img.shields.io/npm/v/@uniswap/token-lists)](https://unpkg.com/@uniswap/token-lists@latest/)
@@ -16,7 +19,7 @@ Neon Rain collection lists are specifications for lists of NFT collection metada
 
 Anyone can create and maintain a Collection list, as long as they follow the specification.
 
-Specifically, an instance of a collection list is a [JSON](https://www.json.org/json-en.html) blob that contains a list of 
+Specifically, an instance of a collection list is a [JSON](https://www.json.org/json-en.html) blob that contains a list of
 [ERC721](https://github.com/ethereum/eips/issues/721) and [ERC1155](https://github.com/ethereum/eips/issues/1155) token metadata for use in dApp user interfaces.
 Token list JSON must validate against the [JSON schema](https://json-schema.org/) in order to be used in the Neon Rain Interface.
 Collections on collection lists, and collection lists themselves, are tagged so that users can easily find NFT collections.
@@ -27,13 +30,13 @@ The JSON schema ID is [https://uniswap.org/tokenlist.schema.json](https://uniswa
 
 ## Validating collection lists
 
-This package does not include code for collection list validation. You can easily do this by including a library such as 
+This package does not include code for collection list validation. You can easily do this by including a library such as
 [ajv](https://ajv.js.org/) to perform the validation against the JSON schema. The schema is exported from the package
 for ease of use.
 
 ```typescript
 
-import { schema } from '@uniswap/token-lists'
+import { schema } from '@SYNC-Network/collection-lists'
 import Ajv from 'ajv'
 import addFormats from 'ajv-formats'
 import fetch from 'node-fetch'
@@ -69,13 +72,13 @@ validate()
 ### Manual
 
 The best way to manually author collection lists is to use an editor that supports JSON schema validation. Most popular
-code editors do, such as [IntelliJ](https://www.jetbrains.com/help/idea/json.html#ws_json_schema_add_custom) or 
+code editors do, such as [IntelliJ](https://www.jetbrains.com/help/idea/json.html#ws_json_schema_add_custom) or
 [VSCode](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings). Other editors
 can be found [here](https://json-schema.org/implementations.html#editors).
 
 The schema is registered in the [SchemaStore](https://github.com/SchemaStore/schemastore), and any file that matches
-the pattern `*.collectionlist.json` should 
-[automatically utilize](https://www.jetbrains.com/help/idea/json.html#ws_json_using_schemas) 
+the pattern `*.collectionlist.json` should
+[automatically utilize](https://www.jetbrains.com/help/idea/json.html#ws_json_using_schemas)
 the JSON schema for the [supported text editors](https://www.schemastore.org/json/#editors).
 
 In order for your token list to be able to be used, it must pass all JSON schema validation.
@@ -117,8 +120,8 @@ of the diff of list updates. List updates may still be diffed in the client dApp
 
 ## Deploying your list
 
-Once you have authored the list, you can make it available at any URI. Prefer pinning your list to IPFS 
-(e.g. via [pinata.cloud](https://pinata.cloud)) and referencing the list by an ENS name that resolves to the 
+Once you have authored the list, you can make it available at any URI. Prefer pinning your list to IPFS
+(e.g. via [pinata.cloud](https://pinata.cloud)) and referencing the list by an ENS name that resolves to the
 [contenthash](https://eips.ethereum.org/EIPS/eip-1577).
 
 If hosted on HTTPS, make sure the endpoint is configured to send an access-control-allow-origin header to avoid CORS errors.

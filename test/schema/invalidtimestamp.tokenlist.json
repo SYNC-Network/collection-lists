@@ -10,7 +10,7 @@
     }
   },
   "timestamp": "abc",
-  "tokens": [
+  "collections": [
     {
       "name": "blah",
       "address": "0x0000000000000000000000000000000000000000",
