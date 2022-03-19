@@ -22,7 +22,6 @@
       "chainId": 1,
       "address": "0x505a12c23fdc8f80ca4a1a3000cd39636c927128",
       "name": "Genesis Syncronauts",
-      "decimals": 6,
       "logoURI": "https://collectionlists.org/static/media/color.e7c60d18.png",
       "tags": [
         "pfp"
