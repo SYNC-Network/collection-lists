@@ -1,6 +1,9 @@
 {
   "name": "SYNC Network",
   "logoURI": "https://collectionlists.org/static/media/color.e7c60d18.png",
+  "baseURL": "https://neonrain.io/",
+  "collectionURL": "https://neonrain.io/explore?collections={collectionId}",
+  "itemURL": "https://neonrain.io/explore/{chainID}/{collectionId}/{tokenId}",
   "keywords": [
     "audited",
     "verified",
