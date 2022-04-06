@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://uniswap.org/tokenlist.schema.json",
-  "title": "Uniswap Token List",
-  "description": "Schema for lists of tokens compatible with the Uniswap Interface",
+  "$id": "https://collectionlists.org/tokenlist.schema.json",
+  "title": "SYNC Collection List",
+  "description": "Schema for lists of collections compatible with the SYNC Interface",
   "definitions": {
     "Version": {
       "type": "object",
@@ -20,35 +20,22 @@
           "type": "integer",
           "description": "The major version of the list. Must be incremented when tokens are removed from the list or token addresses are changed.",
           "minimum": 0,
-          "examples": [
-            1,
-            2
-          ]
+          "examples": [1, 2]
         },
         "minor": {
           "type": "integer",
           "description": "The minor version of the list. Must be incremented when tokens are added to the list.",
           "minimum": 0,
-          "examples": [
-            0,
-            1
-          ]
+          "examples": [0, 1]
         },
         "patch": {
           "type": "integer",
           "description": "The patch version of the list. Must be incremented for any changes to the list.",
           "minimum": 0,
-          "examples": [
-            0,
-            1
-          ]
+          "examples": [0, 1]
         }
       },
-      "required": [
-        "major",
-        "minor",
-        "patch"
-      ]
+      "required": ["major", "minor", "patch"]
     },
     "TagIdentifier": {
       "type": "string",
@@ -56,10 +43,7 @@
       "minLength": 1,
       "maxLength": 10,
       "pattern": "^[\\w]+$",
-      "examples": [
-        "compound",
-        "stablecoin"
-      ]
+      "examples": ["compound", "stablecoin"]
     },
     "ExtensionIdentifier": {
       "type": "string",
@@ -67,11 +51,7 @@
       "minLength": 1,
       "maxLength": 40,
       "pattern": "^[\\w]+$",
-      "examples": [
-        "color",
-        "is_fee_on_transfer",
-        "aliases"
-      ]
+      "examples": ["color", "is_fee_on_transfer", "aliases"]
     },
     "ExtensionMap": {
       "type": "object",
@@ -104,21 +84,15 @@
           "type": "string",
           "minLength": 1,
           "maxLength": 42,
-          "examples": [
-            "#00000"
-          ]
+          "examples": ["#00000"]
         },
         {
           "type": "boolean",
-          "examples": [
-            true
-          ]
+          "examples": [true]
         },
         {
           "type": "number",
-          "examples": [
-            15
-          ]
+          "examples": [15]
         },
         {
           "type": "null"
@@ -168,7 +142,7 @@
     },
     "TagDefinition": {
       "type": "object",
-      "description": "Definition of a tag that can be associated with a token via its identifier",
+      "description": "Definition of a tag that can be associated with a collection via its identifier",
       "additionalProperties": false,
       "properties": {
         "name": {
@@ -186,10 +160,7 @@
           "maxLength": 200
         }
       },
-      "required": [
-        "name",
-        "description"
-      ],
+      "required": ["name", "description"],
       "examples": [
         {
           "name": "Stablecoin",
@@ -197,45 +168,36 @@
         }
       ]
     },
-    "TokenInfo": {
+    "CollectionInfo": {
       "type": "object",
-      "description": "Metadata for a single token in a token list",
+      "description": "Metadata for a single collection in a collection list",
       "additionalProperties": false,
       "properties": {
         "chainId": {
           "type": "integer",
-          "description": "The chain ID of the Ethereum network where this token is deployed",
+          "description": "The chain ID of the Ethereum network where this collection is deployed",
           "minimum": 1,
-          "examples": [
-            1,
-            42
-          ]
+          "examples": [1, 42]
         },
         "address": {
           "type": "string",
-          "description": "The checksummed address of the token on the specified chain ID",
+          "description": "The checksummed address of the collection on the specified chain ID",
           "pattern": "^0x[a-fA-F0-9]{40}$",
-          "examples": [
-            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
-          ]
+          "examples": ["0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"]
         },
         "name": {
           "type": "string",
-          "description": "The name of the token",
+          "description": "The name of the collection",
           "minLength": 1,
           "maxLength": 40,
           "pattern": "^[ \\w.'+\\-%/À-ÖØ-öø-ÿ:&\\[\\]\\(\\)]+$",
-          "examples": [
-            "USD Coin"
-          ]
+          "examples": ["SYNC Collection"]
         },
         "logoURI": {
           "type": "string",
-          "description": "A URI to the token logo asset; if not set, interface will attempt to find a logo based on the token address; suggest SVG or PNG of size 64x64",
+          "description": "A URI to the collection logo asset",
           "format": "uri",
-          "examples": [
-            "ipfs://QmXfzKRvjZz3u5JRgC4v5mGVbm9ahrUiB4DgzHBsnWbTMM"
-          ]
+          "examples": ["ipfs://QmXfzKRvjZz3u5JRgC4v5mGVbm9ahrUiB4DgzHBsnWbTMM"]
         },
         "tags": {
           "type": "array",
@@ -244,22 +206,13 @@
             "$ref": "#/definitions/TagIdentifier"
           },
           "maxItems": 10,
-          "examples": [
-            "stablecoin",
-            "compound"
-          ]
+          "examples": ["stablecoin", "compound"]
         },
         "extensions": {
           "$ref": "#/definitions/ExtensionMap"
         }
       },
-      "required": [
-        "chainId",
-        "address",
-        "decimals",
-        "name",
-        "symbol"
-      ]
+      "required": ["chainId", "address", "name"]
     }
   },
   "type": "object",
@@ -267,13 +220,11 @@
   "properties": {
     "name": {
       "type": "string",
-      "description": "The name of the token list",
+      "description": "The name of the collection list",
       "minLength": 1,
       "maxLength": 20,
       "pattern": "^[\\w ]+$",
-      "examples": [
-        "My Token List"
-      ]
+      "examples": ["My Token List"]
     },
     "timestamp": {
       "type": "string",
@@ -287,7 +238,7 @@
       "type": "array",
       "description": "The list of collections included in the list",
       "items": {
-        "$ref": "#/definitions/TokenInfo"
+        "$ref": "#/definitions/CollectionInfo"
       },
       "minItems": 1,
       "maxItems": 10000
@@ -301,11 +252,7 @@
         "minLength": 1,
         "maxLength": 20,
         "pattern": "^[\\w ]+$",
-        "examples": [
-          "compound",
-          "lending",
-          "personal tokens"
-        ]
+        "examples": ["compound", "lending", "personal tokens"]
       },
       "maxItems": 20,
       "uniqueItems": true
@@ -331,17 +278,30 @@
     },
     "logoURI": {
       "type": "string",
-      "description": "A URI for the logo of the token list; prefer SVG or PNG of size 256x256",
+      "description": "A URI for the logo of the collection list; prefer SVG or PNG of size 256x256",
+      "format": "uri",
+      "examples": ["ipfs://QmXfzKRvjZz3u5JRgC4v5mGVbm9ahrUiB4DgzHBsnWbTMM"]
+    },
+    "baseURL": {
+      "type": "string",
+      "description": "The link to the marketplace where the collection can be found.",
+      "format": "uri",
+      "examples": ["https://neonrain.io"]
+    },
+    "collectionURL": {
+      "type": "string",
+      "description": "The link to the collection on the marketplace. {collectionId} will be replaced by the collection address.",
+      "format": "uri",
+      "examples": ["https://neonrain.io/explore?collections={collectionId}"]
+    },
+    "itemURL": {
+      "type": "string",
+      "description": "The link to an individual NFT of the collection on the marketplace. {chainId} will be replaced by the Chain ID, {collectionId} will be replaced by the collection address, and {tokenId} will be replaced by the Token ID",
       "format": "uri",
       "examples": [
-        "ipfs://QmXfzKRvjZz3u5JRgC4v5mGVbm9ahrUiB4DgzHBsnWbTMM"
+        "https://neonrain.io/explore/{chainID}/{collectionId}/{tokenId}"
       ]
     }
   },
-  "required": [
-    "name",
-    "timestamp",
-    "version",
-    "tokens"
-  ]
+  "required": ["name", "timestamp", "version", "collections"]
 }
