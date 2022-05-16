@@ -26,7 +26,7 @@ Collections on collection lists, and collection lists themselves, are tagged so 
 
 ## JSON Schema $id
 
-The JSON schema ID is [https://uniswap.org/tokenlist.schema.json](https://uniswap.org/tokenlist.schema.json)
+The JSON schema ID is [https://raw.githubusercontent.com/SYNC-Network/collection-lists/main/src/tokenlist.schema.json](https://raw.githubusercontent.com/SYNC-Network/collection-lists/main/src/tokenlist.schema.json)
 
 ## Validating collection lists
 
