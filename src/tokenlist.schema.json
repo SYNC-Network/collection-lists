@@ -189,7 +189,7 @@
           "type": "string",
           "description": "The name of the collection",
           "minLength": 1,
-          "maxLength": 40,
+          "maxLength": 80,
           "pattern": "^[ \\w.'+\\-%/À-ÖØ-öø-ÿ:&\\[\\]\\(\\)]+$",
           "examples": ["SYNC Collection"]
         },
@@ -291,13 +291,13 @@
     "collectionURL": {
       "type": "string",
       "description": "The link to the collection on the marketplace. {collectionId} will be replaced by the collection address.",
-      "format": "uri",
+      "format": "uri-template",
       "examples": ["https://neonrain.io/explore?collections={collectionId}"]
     },
     "itemURL": {
       "type": "string",
       "description": "The link to an individual NFT of the collection on the marketplace. {chainId} will be replaced by the Chain ID, {collectionId} will be replaced by the collection address, and {tokenId} will be replaced by the Token ID",
-      "format": "uri",
+      "format": "uri-template",
       "examples": [
         "https://neonrain.io/explore/{chainID}/{collectionId}/{tokenId}"
       ]
