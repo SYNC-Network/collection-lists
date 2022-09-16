@@ -189,12 +189,12 @@
           "type": "string",
           "description": "The name of the collection",
           "minLength": 1,
-          "maxLength": 80,
+          "maxLength": 120,
           "pattern": "^[ \\w.'+\\-%/À-ÖØ-öø-ÿ:&\\[\\]\\(\\)]+$",
           "examples": ["SYNC Collection"]
         },
         "logoURI": {
-          "type": "string",
+          "type": ["string", "null"],
           "description": "A URI to the collection logo asset",
           "format": "uri",
           "examples": ["ipfs://QmXfzKRvjZz3u5JRgC4v5mGVbm9ahrUiB4DgzHBsnWbTMM"]
@@ -222,7 +222,7 @@
       "type": "string",
       "description": "The name of the collection list",
       "minLength": 1,
-      "maxLength": 20,
+      "maxLength": 120,
       "pattern": "^[\\w ]+$",
       "examples": ["My Token List"]
     },
@@ -277,7 +277,7 @@
       ]
     },
     "logoURI": {
-      "type": "string",
+      "type": ["string", "null"],
       "description": "A URI for the logo of the collection list; prefer SVG or PNG of size 256x256",
       "format": "uri",
       "examples": ["ipfs://QmXfzKRvjZz3u5JRgC4v5mGVbm9ahrUiB4DgzHBsnWbTMM"]
