@@ -148,6 +148,7 @@
         "name": {
           "type": "string",
           "description": "The name of the tag",
+          "pattern": "^[ \\w]+$",
           "minLength": 1,
           "maxLength": 20
         },
@@ -189,6 +190,7 @@
           "description": "The name of the collection",
           "minLength": 1,
           "maxLength": 120,
+          "pattern": "^[ \\w.'+\\-%/À-ÖØ-öø-ÿ:&\\[\\]\\(\\)]+$",
           "examples": ["SYNC Collection"]
         },
         "logoURI": {
@@ -221,6 +223,7 @@
       "description": "The name of the collection list",
       "minLength": 1,
       "maxLength": 120,
+      "pattern": "^[\\w ]+$",
       "examples": ["My Token List"]
     },
     "timestamp": {
