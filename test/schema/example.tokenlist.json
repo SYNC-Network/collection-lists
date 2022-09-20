@@ -32,7 +32,7 @@
     },
     {
       "chainId": 1,
-      "address": "0x39AA39c021dfbaE8faC545936693aC917d5E7563",
+      "address": "0xc6c11f32d3ccc3beaac68793bc3bfbe82838ca9f",
       "name": "CryptoBonds",
       "logoURI": "https://collectionlists.org/static/media/color.e7c60d18.png",
       "tags": [
@@ -43,6 +43,6 @@
   "version": {
     "major": 1,
     "minor": 0,
-    "patch": 1
+    "patch": 2
   }
 }
