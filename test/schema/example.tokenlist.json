@@ -2,21 +2,25 @@
   "name": "SYNC Network",
   "logoURI": "https://collectionlists.org/static/media/color.e7c60d18.png",
   "baseURL": "https://neonrain.io/",
-  "collectionURL": "https://neonrain.io/explore?collections={collectionId}",
-  "itemURL": "https://neonrain.io/explore/{chainID}/{collectionId}/{tokenId}",
+  "collectionURL": "https://syncnetwork.io/#{collectionId}",
+  "itemURL": "https://syncnetwork.io/#{collectionId}&token={tokenId}",
   "keywords": [
     "audited",
     "verified",
     "special tokens"
   ],
   "tags": {
-    "membership": {
-      "name": "Membership",
-      "description": "Collections that have membership services"
+    "nfnt": {
+      "name": "FNFT",
+      "description": "Functional NFTs that have extra functions"
     },
     "pfp": {
       "name": "PFP",
       "description": "Profile Picture Projects"
+    },
+    "dao": {
+      "name": "DAO",
+      "description": "NFTs relating to Decentralized Autonomous Organizations"
     }
   },
   "timestamp": "2022-03-12T00:00:00+00:00",
@@ -27,7 +31,7 @@
       "name": "Genesis Syncronauts",
       "logoURI": "ipfs://QmSeoPM4mQy8XFxVETKxGCqU8eoeL3536VjWocwa7GsoWW",
       "tags": [
-        "pfp"
+        "pfp", "dao"
       ]
     },
     {
@@ -36,7 +40,7 @@
       "name": "CryptoBonds",
       "logoURI": "https://collectionlists.org/static/media/color.e7c60d18.png",
       "tags": [
-        "FNFT"
+        "fnft","dao"
       ]
     }
   ],
