@@ -41,7 +41,7 @@
       "type": "string",
       "description": "The unique identifier of a tag",
       "minLength": 1,
-      "maxLength": 10,
+      "maxLength": 20,
       "pattern": "^[\\w]+$",
       "examples": ["compound", "stablecoin"]
     },
@@ -150,14 +150,14 @@
           "description": "The name of the tag",
           "pattern": "^[ \\w]+$",
           "minLength": 1,
-          "maxLength": 20
+          "maxLength": 40
         },
         "description": {
           "type": "string",
           "description": "A user-friendly description of the tag",
           "pattern": "^[ \\w\\.,:]+$",
           "minLength": 1,
-          "maxLength": 200
+          "maxLength": 400
         }
       },
       "required": ["name", "description"],
@@ -254,7 +254,7 @@
         "pattern": "^[\\w ]+$",
         "examples": ["compound", "lending", "personal tokens"]
       },
-      "maxItems": 20,
+      "maxItems": 50,
       "uniqueItems": true
     },
     "tags": {
@@ -266,7 +266,7 @@
       "additionalProperties": {
         "$ref": "#/definitions/TagDefinition"
       },
-      "maxProperties": 20,
+      "maxProperties": 100,
       "examples": [
         {
           "stablecoin": {
