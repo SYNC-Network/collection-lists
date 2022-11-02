@@ -222,7 +222,7 @@
       "type": "string",
       "description": "The name of the collection list",
       "minLength": 1,
-      "maxLength": 20,
+      "maxLength": 40,
       "pattern": "^[\\w ]+$",
       "examples": ["My Token List"]
     },
